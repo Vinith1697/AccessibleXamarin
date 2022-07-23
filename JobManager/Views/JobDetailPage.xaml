@@ -22,13 +22,27 @@
     <ContentPage.Content>
         <RefreshView Command="{Binding RefreshCommand}" IsRefreshing="{Binding IsBusy}">
             <StackLayout Margin="20" VerticalOptions="FillAndExpand">
-                <Label Text="Name:" FontSize="Medium" />
-                <Entry Text="{Binding Name}" FontSize="Small"/>
-                <Label Text="Description:" FontSize="Medium" />
-                <Entry Text="{Binding Description}" FontSize="Small"/>
-                <Button Text="Save" Command="{Binding SaveCommand}" />
-                <Button Text="Take Picture" Command="{Binding TakePictureCommand}" />
-                <Image Source="{Binding Picture}"/>
+                <Label x:Name="LabelName" Text="Name:" FontSize="Medium" />
+                <Entry Text="{Binding Name}" FontSize="Small"
+                       AutomationProperties.IsInAccessibleTree="true"
+                       AutomationProperties.LabeledBy="{x:Reference LabelName}"
+                       AutomationProperties.Name="Name:"/>
+                <Label x:Name="LabelDescription" Text="Description:" FontSize="Medium" />
+                <Entry Text="{Binding Description}" FontSize="Small"
+                       AutomationProperties.IsInAccessibleTree="true"
+                       AutomationProperties.LabeledBy="{x:Reference LabelDescription}"
+                       AutomationProperties.Name="Description:"/>
+                <Button Text="Save" Command="{Binding SaveCommand}"
+                        AutomationProperties.IsInAccessibleTree="true"
+                        AutomationProperties.Name="Save"
+                        AutomationProperties.HelpText="Saves information to backend"/>
+                <Button Text="Take Picture" Command="{Binding TakePictureCommand}"
+                        AutomationProperties.IsInAccessibleTree="true"
+                        AutomationProperties.Name="Take Picture"
+                        AutomationProperties.HelpText="Takes Picture"/>
+                <Image Source="{Binding Picture}"
+                       AutomationProperties.IsInAccessibleTree="true"
+                       AutomationProperties.Name="accesssible image"/>
 
                 <Label Text="Pictures:" FontSize="Large" />
 
@@ -44,7 +58,9 @@
                                     <Image
                                         Source="{Binding Source}"
                                         WidthRequest="200"
-                                        HeightRequest="200"/>
+                                        HeightRequest="200"
+                                        AutomationProperties.IsInAccessibleTree="true"
+                                        AutomationProperties.Name="accesssible image"/>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>
