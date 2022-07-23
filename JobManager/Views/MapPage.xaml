@@ -13,7 +13,7 @@
             <Label Text="Map Here"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-
+            <!-- Added automation properties to the button for talkback feature-->
             <Button Text="Get Location" Command="{Binding GetLocationCommand}" 
                     AutomationProperties.IsInAccessibleTree="true"
                         AutomationProperties.Name="Get Location"

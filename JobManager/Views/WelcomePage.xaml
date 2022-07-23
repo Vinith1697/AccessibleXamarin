@@ -16,6 +16,7 @@
 
             <Label Text="Orientation: " FontSize="Medium" />
             <Label Text="{Binding Orientation}" FontSize="Large" />
+            <!-- Added automation properties to the button for talkback feature-->
             <Button Text="Get Orientation" Command="{Binding GetOrientationCommand}"
                     AutomationProperties.IsInAccessibleTree="true"
                         AutomationProperties.Name="Get Location"

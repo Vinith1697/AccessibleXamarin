@@ -23,23 +23,28 @@
         <RefreshView Command="{Binding RefreshCommand}" IsRefreshing="{Binding IsBusy}">
             <StackLayout Margin="20" VerticalOptions="FillAndExpand">
                 <Label x:Name="LabelName" Text="Name:" FontSize="Medium" />
+                <!-- Added automation properties to the entry for talkback feature-->
                 <Entry Text="{Binding Name}" FontSize="Small"
                        AutomationProperties.IsInAccessibleTree="true"
                        AutomationProperties.LabeledBy="{x:Reference LabelName}"
                        AutomationProperties.Name="Name:"/>
                 <Label x:Name="LabelDescription" Text="Description:" FontSize="Medium" />
+                <!-- Added automation properties to the entry for talkback feature-->
                 <Entry Text="{Binding Description}" FontSize="Small"
                        AutomationProperties.IsInAccessibleTree="true"
                        AutomationProperties.LabeledBy="{x:Reference LabelDescription}"
                        AutomationProperties.Name="Description:"/>
+                <!-- Added automation properties to the button for talkback feature-->
                 <Button Text="Save" Command="{Binding SaveCommand}"
                         AutomationProperties.IsInAccessibleTree="true"
                         AutomationProperties.Name="Save"
                         AutomationProperties.HelpText="Saves information to backend"/>
+                <!-- Added automation properties to the button for talkback feature-->
                 <Button Text="Take Picture" Command="{Binding TakePictureCommand}"
                         AutomationProperties.IsInAccessibleTree="true"
                         AutomationProperties.Name="Take Picture"
                         AutomationProperties.HelpText="Takes Picture"/>
+                <!-- Added automation properties to the image for talkback feature-->
                 <Image Source="{Binding Picture}"
                        AutomationProperties.IsInAccessibleTree="true"
                        AutomationProperties.Name="accesssible image"/>
